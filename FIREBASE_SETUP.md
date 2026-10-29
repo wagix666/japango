@@ -1,6 +1,6 @@
 # Firebase Authentication Setup
 
-JapanGo now uses Firebase Authentication for real email verification and Google sign-in. The old browser-only account list is no longer used. Learning progress still stays in this browser; this change does not add cloud progress sync.
+JapanGo uses Firebase Authentication for email verification and Google sign-in. Learning progress is stored separately for each signed-in account. Set up Firestore as described in [FIRESTORE_SETUP.md](FIRESTORE_SETUP.md) to sync progress across browsers and devices.
 
 ## 1. Create a Firebase project
 
@@ -38,11 +38,15 @@ Do not include a Firebase Admin SDK service-account key here.
 
 Firebase OAuth does not work reliably from a `file://` page. In VS Code, install the **Live Server** extension, right-click `index.html`, and choose **Open with Live Server**. The address should start with `http://127.0.0.1:` or `http://localhost:`. Confirm that hostname is listed under Firebase **Authorized domains**.
 
-## 5. Try account flows
+## 5. Set up per-account progress
+
+Follow [FIRESTORE_SETUP.md](FIRESTORE_SETUP.md) to create Firestore and publish the per-user security rules. Without Firestore, progress remains cached separately by account on this browser but cannot sync to other devices.
+
+## 6. Try account flows
 
 - Create an account with an email and password. JapanGo sends Firebase's verification email and asks you to verify before logging in.
 - Open the email's verification link, return to JapanGo, then log in with the email/password.
-- Select **Continue with Google** to use Google OAuth.
+- Select **Log in with Google** to use Google OAuth.
 - Use **Profile** to view the Firebase profile, update the display name, or log out.
 
 The verification email requires network access. The free Firebase Spark plan has quotas and limits that can change; check the current [Firebase pricing page](https://firebase.google.com/pricing) before launch. Set budget alerts if you enable paid Google Cloud services.
@@ -52,5 +56,5 @@ The verification email requires network access. The free Firebase Spark plan has
 - Email and Google identities are stored by Firebase, not in this website's local account list.
 - The app checks Firebase `emailVerified` before allowing email/password login and sends another verification email if needed.
 - Google sign-in uses a redirect on touch devices and a popup on desktop browsers.
-- Learning progress and quiz history are still stored locally in the browser, so they do not follow the user to another device yet.
+- Learning progress and quiz history are stored under each account's UID in Firestore when Firestore has been enabled and its rules published.
 - The JavaScript configuration file is public client configuration. Security must come from Firebase Authentication settings and properly configured service security rules, not from hiding this config.

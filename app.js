@@ -161,7 +161,7 @@ const copy = {
     chartDakutenTitle: 'Dakuten and handakuten', chartDakutenNote: '゛ voices a sound; ゜ changes the H row to P sounds.', chartCombinationTitle: 'Yōon combinations', chartCombinationNote: 'Combine an i-row kana with small ゃ, ゅ, or ょ.', chartBasicCombinations: 'Basic combinations', chartVoicedCombinations: 'Voiced combinations',
     travelTitle: 'Japan travel phrases', travelDesc: 'Practical, polite expressions with kana, romaji, and Sinhala and English meanings.', categoriesFilter: 'All situations', noPhrases: 'No phrases in this situation yet.', situational: 'Situational note',
     settingsTitle: 'Language and settings', settingsDesc: 'Choose the language used for navigation and interface labels.', language: 'Interface language', english: 'English', sinhala: 'සිංහල', save: 'Save settings', cancel: 'Cancel', reset: 'Reset learning progress', resetAsk: 'Reset your local learning progress? This cannot be undone.', resetDone: 'Learning progress was reset on this device.', saved: 'Settings saved.',
-    profileTitle: 'Your profile', signIn: 'Log in', createAccount: 'Create account', signOut: 'Log out', displayName: 'Display name', email: 'Email', password: 'Password', confirmPassword: 'Confirm password', accountSubmit: 'Create my account', loginSubmit: 'Log in with email', noAccount: 'New to JapanGo?', haveAccount: 'Already have an account?', switchToRegister: 'Create an account', switchToLogin: 'Log in instead', localAccountNotice: 'Firebase Authentication manages your sign-in. Learning progress in this version remains stored in this browser.', accountCreated: 'Verification email sent. Verify your email before logging in.', loggedIn: 'You are logged in.', loggedOut: 'You are logged out.', profileUpdated: 'Profile updated.', accountError: 'Could not create or log in. Check your details and try again.', passwordMismatch: 'Passwords do not match.', passwordRequirements: 'Use at least 8 characters.', firebaseSetupNeeded: 'Authentication is not configured yet. Follow FIREBASE_SETUP.md to connect a Firebase project.', firebaseLoadError: 'Firebase Authentication could not load. Check your internet connection and configuration.', firebaseEnableProviders: 'Enable Email/Password and Google providers in Firebase Authentication.', verificationTitle: 'Verify your email', verificationSent: 'We sent a verification link to this email:', verificationInstructions: 'Open the email, verify your address, then return here and log in.', verificationResent: 'Verification email sent again.', emailNotVerified: 'Your email is not verified yet. We sent another verification link.', googleSignIn: 'Log in with Google', googlePopupBlocked: 'Google sign-in popup was blocked. Allow popups or try again.', emailAlreadyUsed: 'This email is already registered. Log in instead.', invalidEmail: 'Enter a valid email address.', orEmail: 'or use email',
+    profileTitle: 'Your profile', signIn: 'Log in', createAccount: 'Create account', signOut: 'Log out', displayName: 'Display name', email: 'Email', password: 'Password', confirmPassword: 'Confirm password', accountSubmit: 'Create my account', loginSubmit: 'Log in with email', noAccount: 'New to JapanGo?', haveAccount: 'Already have an account?', switchToRegister: 'Create an account', switchToLogin: 'Log in instead', localAccountNotice: 'Your learning progress is saved with your account.', accountCreated: 'Verification email sent. Verify your email before logging in.', loggedIn: 'You are logged in.', loggedOut: 'You are logged out.', profileUpdated: 'Profile updated.', accountError: 'Could not create or log in. Check your details and try again.', passwordMismatch: 'Passwords do not match.', passwordRequirements: 'Use at least 8 characters.', firebaseSetupNeeded: 'Authentication is not configured yet. Follow FIREBASE_SETUP.md to connect a Firebase project.', firebaseLoadError: 'Firebase Authentication could not load. Check your internet connection and configuration.', firebaseEnableProviders: 'Enable Email/Password and Google providers in Firebase Authentication.', verificationTitle: 'Verify your email', verificationSent: 'We sent a verification link to this email:', verificationInstructions: 'Open the email, verify your address, then return here and log in.', verificationResent: 'Verification email sent again.', emailNotVerified: 'Your email is not verified yet. We sent another verification link.', googleSignIn: 'Log in with Google', googlePopupBlocked: 'Google sign-in popup was blocked. Allow popups or try again.', emailAlreadyUsed: 'This email is already registered. Log in instead.', invalidEmail: 'Enter a valid email address.', orEmail: 'or use email',
     completed: 'Lesson marked complete.', alreadyCompleted: 'This lesson is already recorded as complete.', noVoice: 'A Japanese speech voice is not available in this browser.', speaking: 'Playing device text-to-speech. This is not a native-speaker recording.',
     offlineNote: 'Your lessons and saved progress stay on this device. Speech playback needs a Japanese voice provided by your browser or operating system.', emergencyNote: 'Emergency details vary by location. This starter guide does not provide official emergency numbers; ask local staff or consult verified official guidance.', emptyHistory: 'No quiz results yet. Take a quick practice round to start tracking your progress.'
   },
@@ -184,27 +184,46 @@ const copy = {
     chartDakutenTitle: 'Dakuten සහ handakuten', chartDakutenNote: '゛ ලකුණ ශබ්දය voiced කරයි; ゜ ලකුණ H පේළිය P ශබ්ද කරයි.', chartCombinationTitle: 'Yōon සංයුක්ත ශබ්ද', chartCombinationNote: 'i පේළියේ kana අකුරකට කුඩා ゃ, ゅ, හෝ ょ එක් කරන්න.', chartBasicCombinations: 'මූලික සංයෝජන', chartVoicedCombinations: 'හඬ වෙනස් වූ සංයෝජන',
     travelTitle: 'ජපාන ගමන් වාක්‍ය', travelDesc: 'කනා, රෝමාජි සහ සිංහල හා ඉංග්‍රීසි අර්ථ සමඟ ප්‍රායෝගික, විනීත ප්‍රකාශ.', categoriesFilter: 'සියලු අවස්ථා', noPhrases: 'මෙම අවස්ථාවට වාක්‍ය තවම නැහැ.', situational: 'අවස්ථා සටහන',
     settingsTitle: 'භාෂාව සහ සැකසුම්', settingsDesc: 'මෙනු සහ අතුරුමුහුණත සඳහා භාවිතා කරන භාෂාව තෝරන්න.', language: 'අතුරුමුහුණත් භාෂාව', english: 'English', sinhala: 'සිංහල', save: 'සැකසුම් සුරකින්න', cancel: 'අවලංගු කරන්න', reset: 'ඉගෙනුම් ප්‍රගතිය මකන්න', resetAsk: 'මේ උපකරණයේ සුරැකි ඉගෙනුම් ප්‍රගතිය මකන්නද? මෙය ආපසු හැරවිය නොහැක.', resetDone: 'මේ උපකරණයේ ඉගෙනුම් ප්‍රගතිය මකා ඇත.', saved: 'සැකසුම් සුරැකිණි.',
-    profileTitle: 'ඔබේ profile එක', signIn: 'Login', createAccount: 'Account එකක් හදන්න', signOut: 'Logout', displayName: 'පෙන්වන නම', email: 'Email', password: 'Password', confirmPassword: 'Password නැවත ලියන්න', accountSubmit: 'Account එක සාදන්න', loginSubmit: 'Email එකෙන් login', noAccount: 'JapanGo අලුතින්ද?', haveAccount: 'දැනටමත් account එකක් තියෙනවාද?', switchToRegister: 'Account එකක් හදන්න', switchToLogin: 'Login වෙන්න', localAccountNotice: 'Login එක Firebase Authentication මඟින් කළමනාකරණය කරයි. මෙම version එකේ ඉගෙනුම් ප්‍රගතිය තවමත් මේ browser එකේ සුරැකේ.', accountCreated: 'Verification email link එක යැව්වා. Login වීමට පෙර email එක verify කරන්න.', loggedIn: 'Login වුණා.', loggedOut: 'Logout වුණා.', profileUpdated: 'Profile එක යාවත්කාලීන කළා.', accountError: 'Account එක සෑදීමට හෝ login වීමට නොහැකි විය. විස්තර පරීක්ෂා කර නැවත උත්සාහ කරන්න.', passwordMismatch: 'Passwords දෙක ගැළපෙන්නේ නැහැ.', passwordRequirements: 'අවම වශයෙන් අකුරු 8ක් භාවිතා කරන්න.', firebaseSetupNeeded: 'Authentication තවම සකස් කර නැහැ. Firebase project එක සම්බන්ධ කිරීමට FIREBASE_SETUP.md පියවර අනුගමනය කරන්න.', firebaseLoadError: 'Firebase Authentication load වුණේ නැහැ. Internet ба configuration පරීක්ෂා කරන්න.', firebaseEnableProviders: 'Firebase Authentication тохиргоонд Email/Password болон Google providers enable කරන්න.', verificationTitle: 'Email එක verify කරන්න', verificationSent: 'මෙම email එකට verification link එක යැව්වා:', verificationInstructions: 'Email එක විවෘත කර ලිපිනය verify කරන්න. ඉන්පසු මෙහි ආපසු පැමිණ login වෙන්න.', emailNotVerified: 'ඔබේ email එක තවම verify කර නැහැ. නැවත verification link එකක් යැව්වා.', googleSignIn: 'Google සමඟ ඉදිරියට යන්න', orEmail: 'නැත්නම් email භාවිතා කරන්න', emailRequired: 'Verification සහ login සඳහා email අවශ්‍යයි.',
+    profileTitle: 'ඔබේ profile එක', signIn: 'Login', createAccount: 'Account එකක් හදන්න', signOut: 'Logout', displayName: 'පෙන්වන නම', email: 'Email', password: 'Password', confirmPassword: 'Password නැවත ලියන්න', accountSubmit: 'Account එක සාදන්න', loginSubmit: 'Email එකෙන් login', noAccount: 'JapanGo අලුතින්ද?', haveAccount: 'දැනටමත් account එකක් තියෙනවාද?', switchToRegister: 'Account එකක් හදන්න', switchToLogin: 'Login වෙන්න', localAccountNotice: 'ඔබේ ඉගෙනුම් ප්‍රගතිය account එකට සුරැකේ.', accountCreated: 'Verification email link එක යැව්වා. Login වීමට පෙර email එක verify කරන්න.', loggedIn: 'Login වුණා.', loggedOut: 'Logout වුණා.', profileUpdated: 'Profile එක යාවත්කාලීන කළා.', accountError: 'Account එක සෑදීමට හෝ login වීමට නොහැකි විය. විස්තර පරීක්ෂා කර නැවත උත්සාහ කරන්න.', passwordMismatch: 'Passwords දෙක ගැළපෙන්නේ නැහැ.', passwordRequirements: 'අවම වශයෙන් අකුරු 8ක් භාවිතා කරන්න.', firebaseSetupNeeded: 'Authentication තවම සකස් කර නැහැ. Firebase project එක සම්බන්ධ කිරීමට FIREBASE_SETUP.md පියවර අනුගමනය කරන්න.', firebaseLoadError: 'Firebase Authentication load වුණේ නැහැ. Internet ба configuration පරීක්ෂා කරන්න.', firebaseEnableProviders: 'Firebase Authentication тохиргоонд Email/Password болон Google providers enable කරන්න.', verificationTitle: 'Email එක verify කරන්න', verificationSent: 'මෙම email එකට verification link එක යැව්වා:', verificationInstructions: 'Email එක විවෘත කර ලිපිනය verify කරන්න. ඉන්පසු මෙහි ආපසු පැමිණ login වෙන්න.', emailNotVerified: 'ඔබේ email එක තවම verify කර නැහැ. නැවත verification link එකක් යැව්වා.', googleSignIn: 'Google සමඟ ඉදිරියට යන්න', orEmail: 'නැත්නම් email භාවිතා කරන්න', emailRequired: 'Verification සහ login සඳහා email අවශ්‍යයි.',
     completed: 'පාඩම සම්පූර්ණ කළ බව සටහන් කළා.', alreadyCompleted: 'මෙම පාඩම දැනටමත් සම්පූර්ණ කර ඇත.', noVoice: 'මෙම browser එකේ ජපන් හඬක් නොමැත.', speaking: 'උපකරණයේ text-to-speech ක්‍රියාත්මකයි. මෙය ස්වදේශීය කථිකයෙකුගේ පටිගත කිරීමක් නොවේ.',
     offlineNote: 'පාඩම් සහ සුරැකි ප්‍රගතිය මේ උපකරණයේම පවතී. කථන playback සඳහා browser හෝ මෙහෙයුම් පද්ධතියෙන් සපයන ජපන් හඬක් අවශ්‍යයි.', emergencyNote: 'හදිසි තොරතුරු ස්ථානය අනුව වෙනස් වේ. මෙම ආරම්භක මාර්ගෝපදේශයේ නිල හදිසි අංක නැත; එම ස්ථානයේ කාර්ය මණ්ඩලයෙන් විමසන්න හෝ තහවුරු කළ නිල තොරතුරු බලන්න.', emptyHistory: 'තවම ප්‍රශ්නාවලි ප්‍රතිඵල නැහැ. ප්‍රගතිය සටහන් කිරීමට කෙටි පුහුණුවක් කරන්න.'
   }
 };
 
-function readProgress() {
+function emptyProgress() {
+  return { language: 'en', completed: [], quizResults: [], activityDates: [], favorites: [] };
+}
+
+function normalizeProgress(saved = {}) {
+  return {
+    language: saved.language === 'si' ? 'si' : 'en',
+    completed: Array.isArray(saved.completed) ? saved.completed : [],
+    quizResults: Array.isArray(saved.quizResults) ? saved.quizResults : [],
+    activityDates: Array.isArray(saved.activityDates) ? saved.activityDates : [],
+    favorites: Array.isArray(saved.favorites) ? saved.favorites : []
+  };
+}
+
+function readProgress(storageKey = STORAGE_KEY) {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
     if (Object.prototype.hasOwnProperty.call(saved, 'writingResults')) {
       delete saved.writingResults;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      localStorage.setItem(storageKey, JSON.stringify(saved));
     }
-    return { language: saved.language === 'si' ? 'si' : 'en', completed: Array.isArray(saved.completed) ? saved.completed : [], quizResults: Array.isArray(saved.quizResults) ? saved.quizResults : [], activityDates: Array.isArray(saved.activityDates) ? saved.activityDates : [], favorites: Array.isArray(saved.favorites) ? saved.favorites : [] };
+    return normalizeProgress(saved);
   } catch {
-    return { language: 'en', completed: [], quizResults: [], activityDates: [], favorites: [] };
+    return emptyProgress();
   }
 }
 
 let firebaseAuthState = { configured: false, status: 'loading', user: null, error: '' };
 let pendingVerificationEmail = '';
+let progressUserId = '';
+let accountProgressReady = false;
+let progressLoadToken = 0;
+let progressSaveQueue = Promise.resolve();
+let progressSyncWarningShown = false;
 
 // Theme Handling
 let currentTheme = localStorage.getItem(THEME_KEY) || 'light';
@@ -222,7 +241,7 @@ function toggleTheme() {
 }
 
 let progress = readProgress();
-let currentView = 'home';
+let currentView = 'profile';
 let profileMode = 'login';
 let profileError = '';
 let dictionaryTab = 'hiragana';
@@ -247,11 +266,68 @@ let translationLanguage = progress.language;
 const content = document.querySelector('#app-content');
 
 function saveProgress() {
+  const storageKey = progressUserId ? `${STORAGE_KEY}:user:${progressUserId}` : STORAGE_KEY;
+  const savedAt = Date.now();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    localStorage.setItem(storageKey, JSON.stringify(progress));
+    if (progressUserId) localStorage.setItem(`${storageKey}:saved-at`, String(savedAt));
   } catch {
     showToast('Progress could not be saved in this browser.');
   }
+
+  const userId = progressUserId;
+  const saveToCloud = window.JapanGoFirebaseAuth?.saveProgress;
+  if (!userId || !saveToCloud) return;
+  const snapshot = JSON.parse(JSON.stringify(progress));
+  progressSaveQueue = progressSaveQueue
+    .then(() => firebaseAuthState.user?.uid === userId ? saveToCloud(snapshot, savedAt) : undefined)
+    .catch((error) => {
+      console.error('Could not sync learning progress to Firestore:', error);
+      if (!progressSyncWarningShown) {
+        progressSyncWarningShown = true;
+        showToast('Progress is saved on this device. Enable Firestore to sync it to your account.');
+      }
+    });
+}
+
+async function loadSignedInProgress(user) {
+  const loadToken = ++progressLoadToken;
+  const storageKey = `${STORAGE_KEY}:user:${user.uid}`;
+  const hasAccountCache = localStorage.getItem(storageKey) !== null;
+  const hasLegacyProgress = localStorage.getItem(STORAGE_KEY) !== null;
+  let nextProgress = hasAccountCache
+    ? readProgress(storageKey)
+    : hasLegacyProgress ? readProgress(STORAGE_KEY) : emptyProgress();
+  const localSavedAt = Number(localStorage.getItem(`${storageKey}:saved-at`) || 0);
+  let cloudProgress = null;
+  let cloudReadFailed = false;
+
+  try {
+    cloudProgress = await window.JapanGoFirebaseAuth.loadProgress();
+  } catch (error) {
+    cloudReadFailed = true;
+    console.error('Could not load learning progress from Firestore:', error);
+  }
+
+  if (loadToken !== progressLoadToken || firebaseAuthState.user?.uid !== user.uid) return;
+  if (cloudProgress && (!hasAccountCache || cloudProgress.savedAt >= localSavedAt)) {
+    nextProgress = normalizeProgress(cloudProgress.progress);
+  }
+
+  progress = nextProgress;
+  progressUserId = user.uid;
+  accountProgressReady = true;
+  currentView = 'learn';
+  render();
+
+  if (cloudReadFailed && !progressSyncWarningShown) {
+    progressSyncWarningShown = true;
+    showToast('Cloud progress is unavailable. Create Firestore and publish the supplied security rules to sync across devices.');
+  }
+
+  // Keep the account cache fresh and migrate existing browser progress to the first account.
+  saveProgress();
+  if (localStorage.getItem(storageKey) !== null) localStorage.removeItem(STORAGE_KEY);
 }
 
 function t(key) { return copy[progress.language][key] || copy.en[key] || key; }
@@ -278,10 +354,12 @@ function renderNavigation() {
   const languageLabel = document.querySelector('#language-label');
   if (languageLabel) languageLabel.textContent = progress.language === 'si' ? 'සිංහල' : 'English';
   const account = firebaseAuthState.user;
+  const profileButton = document.querySelector('#profile-button');
+  if (profileButton) profileButton.classList.toggle('needs-auth', !account);
   const profileName = document.querySelector('#profile-name');
   const profileDetail = document.querySelector('#profile-detail');
-  if (profileName) profileName.textContent = account?.displayName || (progress.language === 'si' ? 'ආගන්තුකයා' : 'Guest');
-  if (profileDetail) profileDetail.textContent = account?.email || (progress.language === 'si' ? 'Login / Account' : 'Login / Account');
+  if (profileName) profileName.textContent = account?.displayName || 'Sign in / Profile';
+  if (profileDetail) profileDetail.textContent = account?.email || 'Email or Google';
 }
 
 function titleBlock(title, description) {
@@ -720,6 +798,9 @@ function renderProgress() {
 function renderProfile() {
   const account = firebaseAuthState.user;
   const notice = `<div class="account-notice">${t('localAccountNotice')}</div>`;
+  if (account && !accountProgressReady) {
+    return `${titleBlock(t('profileTitle'), 'Loading your saved lessons…')}<section class="panel account-panel"><p role="status">Loading your account and progress…</p></section>`;
+  }
   if (!account) {
     if (profileMode === 'verification') {
       return `${titleBlock(t('verificationTitle'), t('verificationInstructions'))}<section class="panel account-panel"><div class="verification-card"><span class="verification-icon">✉</span><h2>${t('verificationTitle')}</h2><p>${t('verificationSent')}</p><strong>${escapeHtml(pendingVerificationEmail)}</strong><p>${t('verificationInstructions')}</p><button class="button-primary account-submit" type="button" data-profile-mode="login">${t('switchToLogin')}</button></div>${notice}</section>`;
@@ -755,7 +836,10 @@ function renderProfile() {
       </form>
       <p class="account-switch">${t('noAccount')} <button class="text-button" type="button" data-profile-mode="register">${t('switchToRegister')}</button></p>
     `;
-    return `${titleBlock(t('profileTitle'), createMode ? t('createAccount') : t('signIn'))}<section class="panel account-panel"><div class="account-mode-tabs"><button class="${!createMode ? 'selected' : ''}" type="button" data-profile-mode="login">${t('signIn')}</button><button class="${createMode ? 'selected' : ''}" type="button" data-profile-mode="register">${t('createAccount')}</button></div>${setupNotice}${error}<button class="google-signin-button" type="button" data-google-sign-in ${authDisabled}><span class="google-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.75 7.18l7.73 6C44.43 37.89 46.98 31.72 46.98 24.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.88.93 7.55 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>${t('googleSignIn')}</button><div class="account-divider"><span>${t('orEmail')}</span></div>${form}${notice}</section>`;
+    const authDescription = createMode
+      ? (progress.language === 'si' ? 'පාඩම් ප්‍රගතිය ඔබේ account එකට save කිරීමට account එකක් සාදන්න.' : 'Create an account to save your lesson progress.')
+      : (progress.language === 'si' ? 'ඔබේ පාඩම් වෙත යාමට login වෙන්න.' : 'Log in to continue to your lessons.');
+    return `${titleBlock('JapanGo', authDescription)}<section class="panel account-panel"><div class="account-mode-tabs"><button class="${!createMode ? 'selected' : ''}" type="button" data-profile-mode="login">${t('signIn')}</button><button class="${createMode ? 'selected' : ''}" type="button" data-profile-mode="register">${t('createAccount')}</button></div>${setupNotice}${error}<button class="google-signin-button" type="button" data-google-sign-in ${authDisabled}><span class="google-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.75 7.18l7.73 6C44.43 37.89 46.98 31.72 46.98 24.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.88.93 7.55 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>${t('googleSignIn')}</button><div class="account-divider"><span>${t('orEmail')}</span></div>${form}${notice}</section>`;
   }
 
   const emailStatus = account.emailVerified ? (progress.language === 'si' ? 'Email баталгаажсан' : 'Email verified') : (progress.language === 'si' ? 'Email баталгаажаагүй' : 'Email not verified');
@@ -764,6 +848,9 @@ function renderProfile() {
 }
 
 function render() {
+  const authLocked = !firebaseAuthState.user || !accountProgressReady;
+  document.body.classList.toggle('auth-locked', authLocked);
+  if (authLocked) currentView = 'profile';
   renderNavigation();
   const renderers = { 
     home: renderHome, 
@@ -1057,7 +1144,7 @@ document.addEventListener('click', (event) => {
   }
 
   if (target.hasAttribute('data-sign-out')) {
-    window.JapanGoFirebaseAuth?.signOut().then(() => showToast(t('loggedOut'))).catch((error) => {
+    progressSaveQueue.then(() => window.JapanGoFirebaseAuth?.signOut()).then(() => showToast(t('loggedOut'))).catch((error) => {
       profileError = firebaseErrorMessage(error);
       render();
     });
@@ -1225,7 +1312,21 @@ window.addEventListener('japango-auth-state', (event) => {
   if (firebaseAuthState.user) {
     profileError = '';
     profileMode = 'login';
+    if (progressUserId === firebaseAuthState.user.uid && accountProgressReady) {
+      currentView = 'learn';
+      render();
+      return;
+    }
+    accountProgressReady = false;
+    currentView = 'profile';
+    render();
+    loadSignedInProgress(firebaseAuthState.user);
+    return;
   }
+  progressLoadToken += 1;
+  accountProgressReady = false;
+  progressUserId = '';
+  currentView = 'profile';
   render();
 });
 
@@ -1259,4 +1360,3 @@ document.addEventListener('change', (event) => {
 // Initialize Theme & App
 applyTheme(currentTheme);
 render();
-if (!localStorage.getItem(STORAGE_KEY)) openSettings(true);

@@ -14,7 +14,9 @@ const authApi = {
   signInWithGoogle: null,
   signOut: null,
   updateDisplayName: null,
-  resendVerification: null
+  resendVerification: null,
+  loadProgress: null,
+  saveProgress: null
 };
 
 window.JapanGoFirebaseAuth = authApi;
@@ -38,12 +40,14 @@ async function initializeFirebase() {
   }
 
   try {
-    const [appSdk, authSdk] = await Promise.all([
+    const [appSdk, authSdk, firestoreSdk] = await Promise.all([
       import(`https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app.js`),
-      import(`https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-auth.js`)
+      import(`https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-auth.js`),
+      import(`https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore.js`)
     ]);
     const app = appSdk.initializeApp(config);
     const auth = authSdk.getAuth(app);
+    const db = firestoreSdk.getFirestore(app);
     await authSdk.setPersistence(auth, authSdk.browserLocalPersistence);
 
     authApi.signUp = async ({ email, password, displayName }) => {
@@ -79,6 +83,25 @@ async function initializeFirebase() {
     };
 
     authApi.signOut = () => authSdk.signOut(auth);
+    authApi.loadProgress = async () => {
+      const user = auth.currentUser;
+      if (!user) throw new Error('Sign in before loading learning progress.');
+      const progressRef = firestoreSdk.doc(db, 'users', user.uid, 'appData', 'progress');
+      const snapshot = await firestoreSdk.getDoc(progressRef);
+      if (!snapshot.exists()) return null;
+      const data = snapshot.data();
+      return data.progress ? { progress: data.progress, savedAt: data.clientUpdatedAt || 0 } : null;
+    };
+    authApi.saveProgress = async (progress, savedAt) => {
+      const user = auth.currentUser;
+      if (!user) throw new Error('Sign in before saving learning progress.');
+      const progressRef = firestoreSdk.doc(db, 'users', user.uid, 'appData', 'progress');
+      await firestoreSdk.setDoc(progressRef, {
+        progress,
+        clientUpdatedAt: savedAt,
+        updatedAt: firestoreSdk.serverTimestamp()
+      }, { merge: true });
+    };
     authApi.resendVerification = async () => {
       const user = auth.currentUser;
       if (!user) throw new Error('No signed-in user. Log in again to resend verification.');
